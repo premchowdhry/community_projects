@@ -59,6 +59,6 @@ def activate(request, uidb64, token):
         user.profile.email_confirmed = True
         user.save()
         auth.login(request, user)
-        return redirect('login')
+        return redirect('find_post')
     else:
         return render(request, 'account_activation_invalid.html')
