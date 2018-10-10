@@ -16,6 +16,9 @@ def login(request):
 def account_activation_sent(request):
     return render(request, 'login/account_activation_sent.html')
 
+def account_activation_invalid(request):
+    return render(request, 'login/account_activation_invalid.html')
+
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
