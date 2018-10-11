@@ -9,15 +9,30 @@ from .tokens import account_activation_token
 from .forms import SignUpForm
 from .emails import send_activation_email
 
-
-def login(request):
-    return render(request, 'login/login.html')
-
 def account_activation_sent(request):
     return render(request, 'login/account_activation_sent.html')
 
 def account_activation_invalid(request):
     return render(request, 'login/account_activation_invalid.html')
+
+
+def login(request):
+    if request.method == 'POST':
+        try:
+            user = User.objects.get(username=request.POST['username'])
+        except User.DoesNotExist:
+            user = None
+
+        if user is not None and user.is_active and user.profile.email_confirmed:
+            if user.check_password(request.POST['password']):
+                auth.login(request, user)
+                return redirect('find_post')
+        else:
+            # Wrong username, wrong password, or account not activated
+            pass
+
+    return render(request, 'login/login.html')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -32,20 +47,19 @@ def signup(request):
             messages.error(request, f'Error')
     else:
         form = SignUpForm()
+    return render(request, 'login/signup.html', {'title': 'Sign Up', 'form': form})
 
-    context = {
-        'title': 'Sign Up',
-        'form': form,
-    }
-    return render(request, 'login/signup.html', context)
 
 def activate(request, uidb64, token):
+    # Try to retrieve uid from the link/url.
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
 
+    # Check whether the token is valid.
+    # If so, activate the user's account.
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.profile.email_confirmed = True
