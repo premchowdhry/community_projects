@@ -144,13 +144,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 # Port is 587 for TLS and 465 for SSL
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'shindexro@gmail.com'
-EMAIL_HOST_PASSWORD = 'password_goes_in_here'
+EMAIL_HOST_USER = 'dodev4ever@gmail.com'
+EMAIL_HOST_PASSWORD = 'testing321'
+DEFAULT_FROM_EMAIL = 'dodev4ever@gmail.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
