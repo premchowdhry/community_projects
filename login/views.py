@@ -2,13 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from django.utils.encoding import force_bytes, force_text
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.template.loader import render_to_string
-from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_text
+from django.utils.http import urlsafe_base64_decode
 
-from .forms import SignUpForm
 from .tokens import account_activation_token
+from .forms import SignUpForm
+from .emails import send_activation_email
+
 
 def login(request):
     return render(request, 'login/login.html')
@@ -26,15 +26,7 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
-            current_site = get_current_site(request)
-            subject = 'Activate Your Community Project Account'
-            email_message = render_to_string('login/account_activation_email.html', {
-                'user': user,
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-                'token': account_activation_token.make_token(user),
-            })
-            user.email_user(subject, email_message)
+            send_activation_email(request, user)
             return redirect('account_activation_sent')
         else:
             messages.error(request, f'Error')
