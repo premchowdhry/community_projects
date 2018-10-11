@@ -11,28 +11,44 @@
 		<title>Community Projects</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/png" href="{% static 'login/images/icons/donation.png' %}"/>
 		<link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
 	</head>
+
 	<body class="post is-preload">
 		<div id="page-wrapper">
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul><a href="find.html">
-					<img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
-				</a>
-					<li><a href="{% url 'find_post' %}">Find</a></li>
-					<li><a href="{% url 'create_post' %}">Post</a></li>
-					<li><a href="{% url 'dashboard' %}">DashBoard</a></li>
-					<li><a href="{% url 'profile' %}">My Profile</a></li>
-					<li><a href="{% url 'login' %}">Logout</a></li>
-				</ul>
-			</nav>
+			{% block nav %}
+				<!-- Nav -->
+				<nav id="nav">
+					<ul><a href="{% url 'find_post' %}">
+						<img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
+					</a>
+						<li class="{% if current_page == 'find' %}current{% endif %}">
+							<a href="{% url 'find_post' %}">Find</a>
+						</li>
+						<li class="{% if current_page == 'post' %}current{% endif %}">
+							<a href="{% url 'create_post' %}">Post</a>
+						</li>
+						<li class="{% if current_page == 'dashboard' %}current{% endif %}">
+							<a href="{% url 'dashboard' %}">DashBoard</a>
+						</li>
+						<li class="{% if current_page == 'profile' %}current{% endif %}">
+							<a href="{% url 'profile' %}">My Profile</a>
+						</li>
+						<li class="{% if current_page == 'logout' %}current{% endif %}">
+							<a href="{% url 'login' %}">Logout</a>
+						</li>
+					</ul>
+				</nav>
+			{% endblock nav %}
+
+			{% block banner %}{% endblock %}
 
 		  <!-- Main -->
 			<section id="main">
 				<div class="container">
-          {% block content %}{% endblock %}
+          {% block main %}{% endblock %}
 				</div>
 			</section>
 

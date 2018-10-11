@@ -23,13 +23,15 @@ def login(request):
         except User.DoesNotExist:
             user = None
 
-        if user is not None and user.is_active and user.profile.email_confirmed:
-            if user.check_password(request.POST['password']):
-                auth.login(request, user)
-                return redirect('find_post')
+        if user is not None and user.is_active and user.profile.email_confirmed\
+          and user.check_password(request.POST['password']):
+            auth.login(request, user)
+            return redirect('find_post')
         else:
             # Wrong username, wrong password, or account not activated
-            pass
+            # Intended not to show what went wrong for security reasons
+            messages.error(request, 'Wrong username password combination.')
+            messages.error(request, 'Also please make sure you have activate the account.')
 
     return render(request, 'login/login.html')
 

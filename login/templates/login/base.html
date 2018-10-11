@@ -40,19 +40,17 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('/static/login/images/background/im1.jpeg')";>
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form class="login100-form validate-form flex-sb flex-w" method="POST">
-					{% csrf_token %}
 
-					{% if messages %}
-						{% for message in messages %}
-							<div class="alert alert-{{ message.tags }}">
-								{{ message }}
-							</div>
-						{% endfor %}
-					{% endif %}
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-{{ message.tags }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endif %}
 
-					{% block content %}{% endblock %}
-				</form>
+				{% block content %}{% endblock %}
+
 			</div>
 		</div>
 	</div>
