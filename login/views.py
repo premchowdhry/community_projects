@@ -36,6 +36,11 @@ def login(request):
     return render(request, 'login/login.html')
 
 
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
+
+
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -53,7 +58,7 @@ def signup(request):
 
 
 def activate(request, uidb64, token):
-    # Try to retrieve uid from the link/url.
+    # Try to retrieve uid from the link.
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
