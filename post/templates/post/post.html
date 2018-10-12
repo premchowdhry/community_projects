@@ -1,1 +1,7 @@
 {% extends "post/base.html" %}
+
+{% block nav %}
+	{% with current_page="post" %}
+		{{ block.super }}
+	{% endwith %}
+{% endblock nav %}
