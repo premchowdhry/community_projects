@@ -48,6 +48,7 @@ AUTHENTICATION_BACKENDS = (
  'social_core.backends.google.GoogleOpenId',
  'social_core.backends.google.GoogleOAuth2',
  'social_core.backends.facebook.FacebookOAuth2',
+
  'django.contrib.auth.backends.ModelBackend',
 )
 # SOCIAL_AUTH_URL_NAMESPACE = 'social'
@@ -75,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
             ],
@@ -161,5 +163,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://fosstack.com/how-to-add-google-authentication-in-django/
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '245751261398-qd560b4sekmvb8oe6tkhtt6qemfkhnqf.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'mzD90PO8Ni5FmUUHxqUfal6g'
+
+# Facebook login
+# Follow guide on
+# https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html
+SOCIAL_AUTH_FACEBOOK_KEY = '2229548850635693'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'abbae7ac78fa0dbbd5d9a8651bf741bc'  # App Secret
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'find_post'
