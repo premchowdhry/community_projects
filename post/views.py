@@ -8,7 +8,7 @@ def find(request):
     return render(request, 'post/find.html', context)
 
 def create_post(request):
-    return render(request, 'post/create.html')
+    return render(request, 'post/post.html')
 
 def dashboard(request):
     return render(request, 'post/dashboard.html')
