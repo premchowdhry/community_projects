@@ -19,7 +19,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -41,34 +42,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 		content: '';
 		content: none;
 }
-.post-footer-option li{
-    float:left;
-    margin-right:50px;
-    padding-bottom:15px;
-}
 
-.post-footer-option li a{
-    color:#AFB4BD;
-    font-weight:500;
-    font-size:1.3rem;
-}
-
-.photo-profile{
-    border:1px solid #DDD;
-}
-
-.anchor-username h4{
-    font-weight:bold;
-}
-
-.anchor-time{
-    color:#ADB2BB;
-    font-size:1.2rem;
-}
-
-.post-footer-comment-wrapper{
-    background-color:#F6F7F8;
-}
 	.progress{
 	    width: 150px;
 	    height: 150px;
@@ -219,6 +193,34 @@ blockquote:before, blockquote:after, q:before, q:after {
 	    .progress{ margin-bottom: 20px; }
 	}
 
+	.post-footer-option li{
+	    float:left;
+	    margin-right:50px;
+	    padding-bottom:15px;
+	}
+
+	.post-footer-option li a{
+	    color:#AFB4BD;
+	    font-weight:500;
+	    font-size:1.3rem;
+	}
+
+	.photo-profile{
+	    border:1px solid #DDD;
+	}
+
+	.anchor-username h4{
+	    font-weight:bold;
+	}
+
+	.anchor-time{
+	    color:#ADB2BB;
+	    font-size:1.2rem;
+	}
+
+	.post-footer-comment-wrapper{
+	    background-color:#F6F7F8;
+	}
 
 table {
 	border-collapse: collapse;
@@ -505,7 +507,7 @@ input, select, textarea {
 	@media only screen and (max-width: 990px){
 	    .progress{ margin-bottom: 20px; }
 	}
-	
+
 		@media screen and (max-width: 1680px) {
 
 			.container {
@@ -2487,7 +2489,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background:  #CCE8F4 url("../images/pic01.jp");
+	background: #CCE8F4 url("../images/im.png");
 		background-position: center center;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
@@ -2498,14 +2500,16 @@ input, select, textarea {
 	}
 
 		#banner header {
-			background-color: rgba(34, 30, 31, 0.98);
+			background: #ffffff;
+			opacity: 0.5;
 			display: inline-block;
 			padding: 2.5em 5em;
 			border-radius: 5px;
 		}
 
 			#banner header h2 {
-				color: #fff;
+				color: #011a6f;
+				opacity: 1;
 				font-weight: 700;
 				font-size: 2.5em;
 				margin: 0 0 0 0;
