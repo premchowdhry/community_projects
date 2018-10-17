@@ -7,7 +7,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
-    est_hours = models.IntegerField()
+    est_hours = models.IntegerField(default=1)
 
     def __str__(self):
         return self.title

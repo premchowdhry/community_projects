@@ -8,10 +8,7 @@ def find(request):
     }
     return render(request, 'post/find.html', context)
 
-def post(request):
-    context = {
-        'user': request.user
-    }
+def create_post(request):
     return render(request, 'post/post.html')
 
 def dashboard(request):
