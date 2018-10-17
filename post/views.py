@@ -9,9 +9,6 @@ def find(request):
     return render(request, 'post/find.html', context)
 
 def post(request):
-    context = {
-        'user': request.user
-    }
     return render(request, 'post/post.html')
 
 def dashboard(request):
