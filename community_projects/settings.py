@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_google_maps'
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -172,3 +173,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'abbae7ac78fa0dbbd5d9a8651bf741bc'  # App Secret
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'find_post'
+
+# API Key for Google Maps functionality
+GOOGLE_MAPS_API_KEY = 'AIzaSyBNAqGeX5kzT4xLZcIY7eggB2_4yhYc7v4'
