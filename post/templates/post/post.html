@@ -2,44 +2,68 @@
 {% load static %}
 
 {% block nav %}
-	{% with current_page="post" %}
-		{{ block.super }}
-	{% endwith %}
+{% with current_page="post" %}
+{{ block.super }}
+{% endwith %}
 {% endblock nav %}
 
 
 {% block content %}
 <!-- Main -->
-  <section id="main">
-    <div class="container">
+<section id="main">
+  <div class="container">
 
-      <!-- Content -->
-        <article class="box post">
-          <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-          <header>
-            <h2>POST</h2>
-            <p>Lorem ipsum dolor sit amet feugiat</p>
-          </header>
-          <p>
-            Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
-            hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
-            Proin elementum, nibh non egestas sodales, augue quam aliquet est, id egestas diam justo adipiscing ante.
-            Pellentesque tempus nulla non urna eleifend ut ultrices nisi faucibus.
-            Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
-            hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
-            Proin elementum, nibh non egestas sodales, augue quam aliquet est, id egestas diam justo adipiscing ante.
-          </p>
-          <p>
-            Praesent a dolor leo. Duis in felis in tortor lobortis volutpat et pretium tellus. Vestibulum ac ante nisl,
-            a elementum odio. Duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-            placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-            eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-            elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor.
-          </p>
-          <section>
-        </article>
+    <!-- Content -->
+    <article class="box post">
+
+  <div class="container">
+    <div class="row">
+   <div class="col col-md-2"></div>
+      <div class="col col-md-8">
+    <form>
+    <div class="form-group required">
+      <label for="exampleInputEmail1" class='control-label'>Community Work Title</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: Primary School Tutoring">
+      <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group required">
+      <label for="exampleInputPassword1" class='control-label'>Location of the job</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: 16 Bromell's Rd, London SW4 0BG">
 
     </div>
-  </section>
+    <div class="form-group required">
+      <label for="exampleSelect1" class='control-label'>Hours</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: 2 hours">
+
+    </div>
+
+    <div class="form-group required">
+      <label for="exampleTextarea" class='control-label'>Community Work Description</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="form-group required">
+      <label for="exampleInputPassword1" class='control-label'>Posted by (Company Name):</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: We Do Good Inc.">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">Company Logo</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <!--<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>-->
+    </div>
+      <ul class="media-date text-uppercase reviews list-inline">
+      <!-- <li class="mm"><button type="submit" class="btn btn-primary">Preview</button></li> -->
+      <li class="aaaa"><button type="submit" class="btn btn-success">Publish</button></li>
+    </ul>
+  </form>
+  </div>
+    <div class="col col-md-2"></div>
+
+  </div>
+  </div>
+
+    </article>
+
+  </div>
+</section>
 
 {% endblock content %}
