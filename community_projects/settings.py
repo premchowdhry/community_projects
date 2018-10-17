@@ -100,9 +100,9 @@ WSGI_APPLICATION = 'community_projects.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'evpnudtb',
-        'USER': 'evpnudtb',
-        'PASSWORD': 'V_JYSncx8DheZxGTysxkmNqZ4V84_IK8',
+        'NAME': 'stmidzkm',
+        'USER': 'stmidzkm',
+        'PASSWORD': 'Ed6UV-ai-S_-mwArz6fmzJ3jk0DaeB0w',
         'HOST': 'horton.elephantsql.com',
         'PORT': '5432'    # default postgres port
     }
