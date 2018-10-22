@@ -279,7 +279,6 @@ input, select, textarea {
 		font-size: 14pt;
 		line-height: 1.75em;
 	}
-
 	strong, b {
 		color: #252122;
 		font-weight: 400;
@@ -601,6 +600,7 @@ input, select, textarea {
 
 		.row > .col-3 {
 			width: 25%;
+
 		}
 
 		.row > .off-3 {
@@ -1033,6 +1033,7 @@ input, select, textarea {
 				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: stretch;
+
 			}
 
 				.row > * {
@@ -1895,6 +1896,7 @@ input, select, textarea {
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
 		padding: 2.75em 1.75em 2.75em 1.75em;
+
 	}
 
 		.box .image.featured {
