@@ -104,10 +104,10 @@ WSGI_APPLICATION = 'community_projects.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stmidzkm',
-        'USER': 'stmidzkm',
-        'PASSWORD': 'Ed6UV-ai-S_-mwArz6fmzJ3jk0DaeB0w',
-        'HOST': 'horton.elephantsql.com',
+        'NAME': 'janazybe',
+        'USER': 'janazybe',
+        'PASSWORD': 'Wp9XCyOa8WOYUUeykfSS3jgFvbFczC0S',
+        'HOST': 'dumbo.db.elephantsql.com',
         'PORT': '5432'    # default postgres port
     }
 }

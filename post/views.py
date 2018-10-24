@@ -7,7 +7,7 @@ from .forms import PostForm
 def find(request):
     context = {
         'user': request.user,
-        'posts': Post.objects.all(),
+        'posts': Post.objects.all()[:6],
     }
     return render(request, 'post/find.html', context)
 
