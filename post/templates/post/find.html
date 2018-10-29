@@ -1,21 +1,24 @@
 {% extends "post/base.html" %}
 {% load static %}
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 {% block nav %}
 {% with current_page="find" %}
 {{ block.super }}
 {% endwith %}
 {% endblock nav %}
 
-
 {% block banner %}
 <!-- Banner -->
 <section id="banner">
+
 	<header>
 		<h2>Welcome {{ user.get_username }} !</h2>
 		<p>Discover those who need your help ❤️</p>
 	</header>
 </section>
+
 {% endblock banner %}
 
 
@@ -28,6 +31,7 @@
 			<header class="major">
 				<h2>Recommended for you</h2>
 			</header>
+
 			<div class="row">
 
 				{% for post in posts %}
@@ -54,6 +58,7 @@
 				</div>
 
 				{% endfor %}
+
 
 			</div>
 		</section>
