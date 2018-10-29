@@ -1907,6 +1907,7 @@ footer {
 	background: #ffffff;
 	border-bottom: solid 1px #ccc;
 	padding: 2.75em 1.75em 2.75em 1.75em;
+	min-height: 350px;
 
 }
 
