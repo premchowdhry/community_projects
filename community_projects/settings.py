@@ -15,6 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -34,22 +36,25 @@ INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'post.apps.PostConfig',
     'crispy_forms',
-    # 'social_django',
+    'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_google_maps'
 ]
 
 AUTHENTICATION_BACKENDS = (
- # 'social_core.backends.open_id.OpenIdAuth',
- # 'social_core.backends.google.GoogleOpenId',
- # 'social_core.backends.google.GoogleOAuth2',
+ 'social_core.backends.open_id.OpenIdAuth',
+ 'social_core.backends.google.GoogleOpenId',
+ 'social_core.backends.google.GoogleOAuth2',
+ 'social_core.backends.facebook.FacebookOAuth2',
+
  'django.contrib.auth.backends.ModelBackend',
 )
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
             ],
@@ -97,10 +104,10 @@ WSGI_APPLICATION = 'community_projects.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'evpnudtb',
-        'USER': 'evpnudtb',
-        'PASSWORD': 'V_JYSncx8DheZxGTysxkmNqZ4V84_IK8',
-        'HOST': 'horton.elephantsql.com',
+        'NAME': 'janazybe',
+        'USER': 'janazybe',
+        'PASSWORD': 'Wp9XCyOa8WOYUUeykfSS3jgFvbFczC0S',
+        'HOST': 'dumbo.db.elephantsql.com',
         'PORT': '5432'    # default postgres port
     }
 }
@@ -155,32 +162,20 @@ DEFAULT_FROM_EMAIL = 'dodev4ever@gmail.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-SOCIAL_AUTH_PIPELINE = (
-    'social.pipeline.social_auth.social_details',
-    'social.pipeline.social_auth.social_uid',
-    'social.pipeline.social_auth.auth_allowed',
-    'social.pipeline.social_auth.social_user',
-    'social.pipeline.user.get_username',
-    'social.pipeline.user.create_user',
-    'social.pipeline.social_auth.associate_user',
-    'social.pipeline.debug.debug',
-    'social.pipeline.social_auth.load_extra_data',
-    'social.pipeline.user.user_details',
-    'social.pipeline.debug.debug',
-)
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_IGNORE_DEFAULT_SCOPE = True
-SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
-'https://www.googleapis.com/auth/userinfo.email',
-'https://www.googleapis.com/auth/userinfo.profile'
-]
 # Google+ SignIn (google-plus)
-SOCIAL_AUTH_GOOGLE_PLUS_IGNORE_DEFAULT_SCOPE = True
-SOCIAL_AUTH_GOOGLE_PLUS_SCOPE = [
-'https://www.googleapis.com/auth/plus.login',
-'https://www.googleapis.com/auth/userinfo.email',
-'https://www.googleapis.com/auth/userinfo.profile'
-]
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '407132811738-519f2tnfnqkhig0qci9ltevvp0f185cu.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'OAA6-VMhUO8UtgZJNwe96rnR'
-LOGIN_URL = '/account/login/'
+# Follow guide on
+# https://fosstack.com/how-to-add-google-authentication-in-django/
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '245751261398-qd560b4sekmvb8oe6tkhtt6qemfkhnqf.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'mzD90PO8Ni5FmUUHxqUfal6g'
+
+# Facebook login
+# Follow guide on
+# https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html
+SOCIAL_AUTH_FACEBOOK_KEY = '2229548850635693'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'abbae7ac78fa0dbbd5d9a8651bf741bc'  # App Secret
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'find_post'
+
+# API Key for Google Maps functionality
+GOOGLE_MAPS_API_KEY = 'AIzaSyBNAqGeX5kzT4xLZcIY7eggB2_4yhYc7v4'
