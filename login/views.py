@@ -9,8 +9,10 @@ from .tokens import account_activation_token
 from .forms import SignUpForm
 from .emails import send_activation_email
 
+
 def account_activation_sent(request):
     return render(request, 'login/account_activation_sent.html')
+
 
 def account_activation_invalid(request):
     return render(request, 'login/account_activation_invalid.html')
@@ -24,14 +26,16 @@ def login(request):
             user = None
 
         if user is not None and user.is_active and user.profile.email_confirmed\
-          and user.check_password(request.POST['password']):
-            auth.login(request, user)
+                and user.check_password(request.POST['password']):
+            auth.login(request, user,
+                       backend='django.contrib.auth.backends.ModelBackend')
             return redirect('find_post')
         else:
             # Wrong username, wrong password, or account not activated
             # Intended not to show what went wrong for security reasons
             messages.error(request, 'Wrong username password combination.')
-            messages.error(request, 'Also please make sure you have activate the account.')
+            messages.error(
+                request, 'Also please make sure you have activate the account.')
 
     return render(request, 'login/login.html')
 
@@ -71,7 +75,8 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.profile.email_confirmed = True
         user.save()
-        auth.login(request, user)
+        auth.login(request, user,
+                   backend='django.contrib.auth.backends.ModelBackend')
         return redirect('find_post')
     else:
-        return render(request, 'account_activation_invalid.html')
+        return render(request, 'login/account_activation_invalid.html')
