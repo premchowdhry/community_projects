@@ -13,7 +13,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     #address = map_fields.AddressField(max_length=200)
     #location = map_fields.GeoLocationField(max_length=100)
-    location = models.TextField(max_length=200, default='')
+    location = models.CharField(max_length=200, default='')
     estimate_hours = models.IntegerField(default=1)
     work_date = models.DateTimeField(default=timezone.now, blank=True)
     description = models.TextField(default='')
