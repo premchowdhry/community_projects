@@ -12,7 +12,7 @@
 <!-- Banner -->
 <section id="banner">
 	<header>
-		<h2> Welcome Sophia! </h2>
+		<h2>Welcome {{ user.get_username }} !</h2>
 		<p>Discover those who need your help ❤️</p>
 	</header>
 </section>
@@ -38,7 +38,13 @@
 						<header>
 							<h3>{{ post.title }}</h3>
 						</header>
-						<p>{{ post.description }}</p>
+						<p>
+							{% if post.description|length > 210 %}
+							{{ post.description|slice:":210" }} ...
+							{% else %}
+							{{ post.description }}
+							{% endif %}
+						</p>
 						<footer>
 							<ul class="actions">
 								<li><a href="#" class="button alt">Find out more</a></li>
