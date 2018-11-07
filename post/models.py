@@ -1,7 +1,13 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django_google_maps import fields as map_fields
+
+WORK_CHOICES = (
+    ('schools','Schools'),
+    ('nature', 'Nature'),
+    ('construction','Construction'),
+    ('cleaning','Cleaning'),
+)
 
 def get_image_path(instance, filename):
     return os.path.join('company_logo', str(instance.id), filename)
@@ -14,6 +20,7 @@ class Post(models.Model):
     #address = map_fields.AddressField(max_length=200)
     #location = map_fields.GeoLocationField(max_length=100)
     location = models.CharField(max_length=100, default='')
+    type = models.CharField(max_length=12, choices=WORK_CHOICES, default='schools')
     estimate_hours = models.IntegerField(default=1)
     work_date = models.DateTimeField(default=timezone.now, blank=True)
     description = models.TextField(default='')

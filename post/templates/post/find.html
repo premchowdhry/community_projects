@@ -37,7 +37,15 @@
 					{% for post in posts %}
 					<div class="col-4 col-6-medium col-12-small">
 						<section class="box">
-							<a href="#" class="image featured"><img src="{% static 'post/images/im.png' %}" alt="" /></a>
+							{% if post.type == 'schools' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/schools.jpg' %}" alt="" /></a>
+							{% elif post.type == 'nature' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/nature.jpg' %}" alt="" /></a>
+							{% elif post.type == 'construction' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/construction.jpg' %}" alt="" /></a>
+							{% elif post.type == 'cleaning' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/cleaning.jpg' %}" alt="" /></a>
+							{% endif %}
 							<header>
 								<h3>{{ post.title }}</h3>
 							</header>
@@ -51,7 +59,7 @@
 							<footer>
 								<div class="space-ten"></div>
 								<div class="btn-ground text-center">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i>Quick View</button>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{ post.id }}"><i class="fa fa-search"></i>Quick View</button>
 								</div>
 							</footer>
 						</section>
@@ -60,25 +68,26 @@
 
 				</div>
 			</div>
-			<div class="modal fade product_view" id="product_view">
+
+			{% for post in posts %}
+			<div class="modal fade product_view" id="modal-{{ post.id }}">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h3 class="modal-title">Community Work Title</h3>
+							<h3 class="modal-title">{{ post.title }}</h3>
 							<a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
 						</div>
 						<div class="modal-body">
 							<div class="row">
 								<div class="col-md-6 product_content">
-									<h4>Location of the job: <span>51526</span></h4>
+									<h4>Location of the job: <span>{{ post.location }}</span></h4>
 									<div class="row">
-										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-											specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+										<p>{{ post.description }}</p>
 										<!-- end col -->
 									</div>
 									<div class="space-ten"></div>
 									<div class="btn-ground">
-										<button type="button" class="btn btn-primary"></span> Sign up</button>
+										<button type="button" class="btn btn-primary"></span>Sign up</button>
 									</div>
 								</div>
 							</div>
@@ -86,6 +95,7 @@
 					</div>
 				</div>
 			</div>
+			{% endfor %}
 		</section>
 	</div>
 </div>

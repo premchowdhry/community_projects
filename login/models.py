@@ -18,7 +18,6 @@ class Profile(models.Model):
     profile_image = models.ImageField(
         upload_to=get_image_path, blank=True, null=True)
 
-
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
     if created:
