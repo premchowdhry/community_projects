@@ -46,6 +46,9 @@ blockquote:before, blockquote:after, q:before, q:after {
 	z-index: 1060;
   max-width: 800px;
   width: 100%;
+  position: relative;
+  margin: 0 auto;
+  top: 25%;
 }
 
 .pre-cost {
@@ -1969,6 +1972,36 @@ footer {
 }
 
 /* Button */
+input[type="buttonx"],
+buttonx,
+.buttonx {
+  -webkit-appearance: none;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  position: absolute;
+  top:475px;
+  right:38%;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff !important;
+  font-weight: 700;
+  outline: 0;
+  font-size: 1.1em;
+  padding: 0.65em 1.5em 0.65em 1.5em;
+  text-align: center;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+  -ms-transition: background-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+}
+
+
+
+
+
+
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -1979,9 +2012,6 @@ button,
   text-decoration: none;
   cursor: pointer;
   border: 0;
-  position: absolute;
-  top:475px;
-  right:115px;
   border-radius: 5px;
   background: #007bff;
   color: #fff !important;
