@@ -18,8 +18,11 @@
 
 {% endblock banner %}
 
-
+{% block post %}
+{% endblock post %}
 {% block content %}
+<section id="main">
+<div class="container">
 <div class="row">
 	<div class="col-12">
 		<!-- Portfolio -->
@@ -35,13 +38,13 @@
 					<div class="col-4 col-6-medium col-12-small">
 						<section class="box">
 							{% if post.type == 'schools' %}
-							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/schools.jpg' %}" alt="" /></a>
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/school.jpg' %}" alt="" /></a>
 							{% elif post.type == 'nature' %}
-							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/nature.jpg' %}" alt="" /></a>
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/tree.jpg' %}" alt="" /></a>
 							{% elif post.type == 'construction' %}
 							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/construction.jpg' %}" alt="" /></a>
 							{% elif post.type == 'cleaning' %}
-							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/cleaning.jpg' %}" alt="" /></a>
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/ocean.jpg' %}" alt="" /></a>
 							{% endif %}
 							<header>
 								<h3>{{ post.title }}</h3>
@@ -96,4 +99,6 @@
 		</section>
 	</div>
 </div>
+</div>
+</section>
 {% endblock content %}
