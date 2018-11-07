@@ -34,7 +34,15 @@
 					{% for post in posts %}
 					<div class="col-4 col-6-medium col-12-small">
 						<section class="box">
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							{% if post.type == 'schools' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/schools.jpg' %}" alt="" /></a>
+							{% elif post.type == 'nature' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/nature.jpg' %}" alt="" /></a>
+							{% elif post.type == 'construction' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/construction.jpg' %}" alt="" /></a>
+							{% elif post.type == 'cleaning' %}
+							<a href="#" class="image featured"><img src="{% static 'post/images/work_type/cleaning.jpg' %}" alt="" /></a>
+							{% endif %}
 							<header>
 								<h3>{{ post.title }}</h3>
 							</header>
