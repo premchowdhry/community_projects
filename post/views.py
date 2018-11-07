@@ -6,7 +6,7 @@ from .forms import PostForm
 
 
 def find(request):
-    return render(request, 'post/find.html', {'posts': shown_posts()})
+    return render(request, 'post/find.html', {'posts': shown_posts(request)})
 
 
 def post(request):
@@ -35,5 +35,36 @@ def save_post(author, form):
     new_post.save()
 
 
-def shown_posts():
-    return Post.objects.all().order_by('-date_posted')[:6]
+def shown_posts(request):
+    posts = Post.objects.all().order_by('-date_posted')
+    if 'type' in request.GET:
+        if request.GET['type'] != 'any':
+            posts = posts.filter(type=request.GET['type'])
+    if 'estimate_hours' in request.GET:
+        h = request.GET['estimate_hours']
+        if h == '<1_hour':
+            posts = posts.filter(estimate_hours__range=(0, 1))
+        elif h == '<3_hours':
+            posts = posts.filter(estimate_hours__range=(2, 3))
+        elif h == '<5_hours':
+            posts = posts.filter(estimate_hours__range=(4, 5))
+        elif h == '>5_hours':
+            posts = posts.filter(estimate_hours__gte=6)
+    if 'work_date' in request.GET:
+        d = request.GET['work_date']
+        if d == 'this_week':
+            posts = posts.filter(
+                work_date__lte=timezone.now() + timezone.timedelta(days=7))
+        elif d == 'this_month':
+            posts = posts.filter(
+                work_date__lte=timezone.now() + timezone.timedelta(days=30))
+        elif d == 'within_3_months':
+            posts = posts.filter(
+                work_date__lte=timezone.now() + timezone.timedelta(days=90))
+        elif d == 'within_6_months':
+            posts = posts.filter(
+                work_date__lte=timezone.now() + timezone.timedelta(days=180))
+    return posts[:]
+
+def signed_up_post(request):
+    return render(request, 'post/signed_up_post.html')
