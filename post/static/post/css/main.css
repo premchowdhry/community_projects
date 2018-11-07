@@ -46,15 +46,14 @@ blockquote:before, blockquote:after, q:before, q:after {
 	z-index: 1060;
   max-width: 800px;
   width: 100%;
+  position: relative;
+  margin: 0 auto;
+  top: 25%;
 }
 
 .pre-cost {
   text-decoration: line-through;
   color: #a5a5a5;
-}
-
-.space-ten {
-  padding: 10px 0;
 }
 
 .progress {
@@ -1759,12 +1758,12 @@ p, ul, ol, dl, table {
   }
 
   .row {
-    margin-top: -20px;
+    margin-top: -60px;
     margin-left: -20px;
   }
 
   .row>* {
-    padding: 20px 0 0 20px;
+    padding: 0px 0 0 0px;;
   }
 
   .row.gtr-uniform {
@@ -1941,8 +1940,19 @@ footer {
   background: #ffffff;
   border-bottom: solid 1px #ccc;
   padding: 2.75em 1.75em 2.75em 1.75em;
+  max-height: 540px;
+  min-height: 540px;
+  position: relative;
 }
-
+.box.post{
+  background: padding-box;
+  border-bottom: solid 0px #ccc;
+  padding: 2.75em 1.75em 2.75em 1.75em;
+  max-height: 540px;
+  min-height: 540px;
+  overflow: auto;
+  position: relative;
+}
 .box .image.featured {
   position: relative;
   width: auto;
@@ -1971,6 +1981,36 @@ footer {
 }
 
 /* Button */
+input[type="buttonx"],
+buttonx,
+.buttonx {
+  -webkit-appearance: none;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  position: absolute;
+  top:475px;
+  right:38%;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff !important;
+  font-weight: 700;
+  outline: 0;
+  font-size: 1.1em;
+  padding: 0.65em 1.5em 0.65em 1.5em;
+  text-align: center;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+  -ms-transition: background-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+}
+
+
+
+
+
+
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -2523,7 +2563,7 @@ ul.social li a.fa-google-plus:hover {
     background-repeat: no-repeat;
     text-align: center;
     position: relative;
-    padding: 8em 0;
+    padding: 3em 0;
     margin: 0 0 0 0;
 }
 
@@ -3118,6 +3158,8 @@ body {
     font-size: 1em;
   }
 
+
+
   /* Divided */
   ul.divided li {
     padding: 0.5em 0 0.5em 0;
@@ -3226,7 +3268,7 @@ body {
 
   /* Footer */
   #footer {
-    padding: 40px 0 20px 0;
+    padding: 10px 0 10px 0;
   }
 
   /*The progress bar CSS*/
