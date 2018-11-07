@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Application definition
 
@@ -43,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'easy_maps'
+    'mapwidgets'
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -178,4 +180,4 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'find_post'
 
 # API Key for Google Maps functionality
-EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyBNAqGeX5kzT4xLZcIY7eggB2_4yhYc7v4'
+GOOGLE_MAPS_API_KEY = 'AIzaSyBNAqGeX5kzT4xLZcIY7eggB2_4yhYc7v4'

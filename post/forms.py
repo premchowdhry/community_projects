@@ -21,5 +21,5 @@ class PostForm(forms.ModelForm):
             'company_logo',
         )
         widgets = {
-
+            # 'location' : GoogleStaticOverlayMapWidget,
         }

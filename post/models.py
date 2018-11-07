@@ -17,8 +17,8 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
 
     title = models.CharField(max_length=100)
-    #address = map_fields.AddressField(max_length=200)
-    #location = map_fields.GeoLocationField(max_length=100)
+    # location = map_fields.AddressField(max_length=200)
+    # geolocation = map_fields.GeoLocationField(max_length=100, default='')
     location = models.CharField(max_length=100, default='')
     type = models.CharField(max_length=12, choices=WORK_CHOICES, default='schools')
     estimate_hours = models.IntegerField(default=1)
