@@ -6,11 +6,11 @@
 {{ block.super }}
 {% endwith %}
 {% endblock nav %}
-
-{% block content %}
-
 <!-- Main -->
-<section id="main">
+<!-- <section id="main"> -->
+{% block post %}
+<section id="post">
+  <header class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
   <div class="container">
 
     <!-- Content -->
@@ -48,6 +48,9 @@
     </article>
 
   </div>
+</header>
 </section>
-
+{% endblock post %}
+{% block content %}
 {% endblock content %}
+<!-- </section> -->

@@ -1030,7 +1030,7 @@ p, ul, ol, dl, table {
   }
 
   .row>* {
-    padding: 50px 0 0 50px;
+    padding: 50px 20px 0 20px;
   }
 
   .row.gtr-uniform {
@@ -1270,7 +1270,7 @@ p, ul, ol, dl, table {
   .row {
     margin-top: -30px;
     margin-left: -30px;
-    padding: 30px 0 0 30px;
+    padding: 30px 30px 0 30px;
     position: -webkit-sticky;
     /* Safari */
     position: sticky;
@@ -2514,7 +2514,17 @@ ul.social li a.fa-google-plus:hover {
   border-bottom-color: rgba(34, 30, 31, 0.98);
 }
 
-#im {}
+#post{
+    background: #CCE8F4 url(/static/login/images/background/im.png);
+    background-position: center bottom;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+    padding: 8em 0;
+    margin: 0 0 0 0;
+}
+
 
 /* Banner */
 #banner {
