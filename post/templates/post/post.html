@@ -23,7 +23,14 @@
           <div class="col col-md-8">
             <form method="POST">
               {% csrf_token %}
-              {{ form.as_p }}
+              {% for field in form %}
+              <div class="fieldWrapper">
+                <p>
+                  {{ field.errors }}
+                  {{ field.label_tag }} {{ field }}
+                </p>
+              </div>
+              {% endfor %}
 
               <ul class="media-date text-uppercase reviews list-inline">
                 <li class="aaaa">
