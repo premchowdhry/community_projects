@@ -37,6 +37,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'post.apps.PostConfig',
+    'dashboard.apps.DashboardConfig',
     'crispy_forms',
     'social_django',
     'django.contrib.admin',
