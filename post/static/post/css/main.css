@@ -53,10 +53,6 @@ blockquote:before, blockquote:after, q:before, q:after {
   color: #a5a5a5;
 }
 
-.space-ten {
-  padding: 10px 0;
-}
-
 .progress {
   width: 150px;
   height: 150px;
@@ -1940,6 +1936,9 @@ footer {
   background: #ffffff;
   border-bottom: solid 1px #ccc;
   padding: 2.75em 1.75em 2.75em 1.75em;
+  max-height: 540px;
+  min-height: 540px;
+  position: relative;
 }
 
 .box .image.featured {
@@ -1980,6 +1979,9 @@ button,
   text-decoration: none;
   cursor: pointer;
   border: 0;
+  position: absolute;
+  top:475px;
+  right:115px;
   border-radius: 5px;
   background: #007bff;
   color: #fff !important;
@@ -3116,6 +3118,8 @@ body {
     margin-top: 0;
     font-size: 1em;
   }
+
+
 
   /* Divided */
   ul.divided li {
