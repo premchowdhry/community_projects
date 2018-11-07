@@ -13,6 +13,7 @@ class PostForm(forms.ModelForm):
         fields = (
             'title',
             'location',
+            'type',
             'estimate_hours',
             'work_date',
             'description',

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_google_maps'
+    'easy_maps'
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -178,4 +178,4 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'find_post'
 
 # API Key for Google Maps functionality
-GOOGLE_MAPS_API_KEY = 'AIzaSyBNAqGeX5kzT4xLZcIY7eggB2_4yhYc7v4'
+EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyBNAqGeX5kzT4xLZcIY7eggB2_4yhYc7v4'
