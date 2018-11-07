@@ -2063,6 +2063,7 @@ button.large,
 .image img {
   display: block;
   width: 100%;
+  height: 225px;
 }
 
 .image.centered {
