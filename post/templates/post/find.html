@@ -109,23 +109,33 @@
 									<a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
 								</div>
 								<div class="modal-body">
-									<div class="row">
-										<div class="col-md-6 product_content">
-											<h4>Hosting company: <span>{{ post.company }}</span></h4>
-											<h4>Location of the job: <span>{{ post.location }}</span></h4>
-											<h4>Type of work: <span>{{ post.type }}</span></h4>
-											<h4>Estimated hours: <span>{{ post.estimate_hours }}</span></h4>
-											<div class="row">
-												<p>{{ post.description }}</p>
-												<!-- end col -->
-											</div>
-											<div class="space-ten"></div>
-											<div class="btn-ground">
-												<a href="{% url 'signed_up_post' %}" class="button">Sign up</a>
-												<!-- <button type="button" class="btn btn-primary">Sign up</button> -->
+									<span style="display: flex; flex-direction: row;">
+										<div class="row">
+											<div class="col-md-6 product_content">
+												<h4>Hosting company: <span>{{ post.company }}</span></h4>
+												<h4>Location of the job: <span>{{ post.location }}</span></h4>
+												<h4>Estimated hours: <span>{{ post.estimate_hours }}</span></h4>
+												<div class="row">
+													<p>{{ post.description }}</p>
+												</div>
+												<div class="space-ten"></div>
+												<div class="btn-ground">
+													<a href="{% url 'signed_up_post' %}" class="button">Sign up</a>
+												</div>
 											</div>
 										</div>
-									</div>
+										{% if post.type == 'tutoring' %}
+										<a href="#" class="image featured"><img src="{% static 'post/images/work_type/school.jpg' %}" alt="" /></a>
+										{% elif post.type == 'wildlife_conservation' %}
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
+										{% elif post.type == 'construction' %}
+										<a href="#" class="image featured"><img src="{% static 'post/images/work_type/construction.jpg' %}" alt="" /></a>
+										{% elif post.type == 'ocean_cleaning' %}
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/brighton.png' %}" alt="" /></a>
+										{% elif post.type == 'street_cleaning' %}
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/oxford_street.png' %}" alt="" /></a>
+										{% endif %}
+									</span>
 								</div>
 							</div>
 						</div>

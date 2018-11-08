@@ -23,7 +23,15 @@ def shown_dashboards():
 
 
 def elapsed_time(date_posted):
-    return str(int((timezone.now() - date_posted).total_seconds())) + ' seconds ago'
+    time = int((timezone.now() - date_posted).total_seconds())
+    if time >= 3600:
+        time //= 3600
+        return str(time) + ' hour ago' if (time == 1) else ' hours ago'
+    if time >= 60:
+        time //= 60
+        return str(time) + ' minutes ago'
+    return str(time) + ' seconds ago'
+
 
 
 def save_post(author, form):
