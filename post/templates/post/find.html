@@ -97,9 +97,14 @@
 								</section>
 							</div>
 							{% endfor %}
-
 						</div>
 					</div>
+
+					{% if posts|length == 0 %}
+					<h4 align="center">
+						No matching results.
+					</h4>
+					{% endif %}
 
 					{% for post in posts %}
 					<div class="modal fade product_view" id="modal-{{ post.id }}">
@@ -120,17 +125,18 @@
 													<p>{{ post.description }}</p>
 												</div>
 												<div class="space-ten"></div>
+												<br />
 												<div class="btn-ground">
 													<a href="{% url 'signed_up_post' %}" class="button">Sign up</a>
 												</div>
 											</div>
 										</div>
 										{% if post.type == 'tutoring' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/work_type/school.jpg' %}" alt="" /></a>
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/olaves.png' %}" alt="" /></a>
 										{% elif post.type == 'wildlife_conservation' %}
 										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
 										{% elif post.type == 'construction' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/work_type/construction.jpg' %}" alt="" /></a>
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
 										{% elif post.type == 'ocean_cleaning' %}
 										<a href="#" class="image featured"><img src="{% static 'post/images/maps/brighton.png' %}" alt="" /></a>
 										{% elif post.type == 'street_cleaning' %}

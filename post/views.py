@@ -43,11 +43,11 @@ def shown_posts(request):
     if 'estimate_hours' in request.GET:
         h = request.GET['estimate_hours']
         if h == '<1_hour':
-            posts = posts.filter(estimate_hours__range=(0, 1))
+            posts = posts.filter(estimate_hours__lte=1)
         elif h == '<3_hours':
-            posts = posts.filter(estimate_hours__range=(2, 3))
+            posts = posts.filter(estimate_hours__lte=3)
         elif h == '<5_hours':
-            posts = posts.filter(estimate_hours__range=(4, 5))
+            posts = posts.filter(estimate_hours__lte=5)
         elif h == '>5_hours':
             posts = posts.filter(estimate_hours__gte=6)
     if 'work_date' in request.GET:

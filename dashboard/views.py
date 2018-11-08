@@ -38,6 +38,5 @@ def save_post(author, form):
     new_post = form.save(commit=False)
     new_post.author = author
     new_post.date_posted = timezone.now()
-    new_post.title = form.cleaned_data['title']
     new_post.content = form.cleaned_data['content']
     new_post.save()
