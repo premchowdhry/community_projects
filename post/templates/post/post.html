@@ -1,39 +1,79 @@
 {% load static %}
 <html>
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 <head>
-	<title>Community Projects</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="icon" type="image/png" href="{% static 'login/images/icons/donation.png' %}" />
-	<link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <title>Community Projects</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'login/images/icons/donation.png' %}" />
+
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
 </head>
 
 <body class="post is-preload" style="height = 100% ;">
 	<div id="page-wrapper">
 
 		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
-				<li class="{% if current_page == 'find' %}current{% endif %}">
-					<a href="{% url 'find_post' %}">Find</a>
-				</li>
-				<li class="current">
-					<a href="{% url 'post' %}">Post</a>
-				</li>
-				<li class="{% if current_page == 'dashboard' %}current{% endif %}">
-					<a href="{% url 'dashboard' %}">DashBoard</a>
-				</li>
-				<li class="{% if current_page == 'logout' %}current{% endif %}">
-					<a href="{% url 'logout' %}">Logout</a>
-				</li>
-			</ul>
-		</nav>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" >
+          <img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
 
-<section id="post">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item">
+                <a class="nav-link" style="
+                    padding-right: 3.9rem;
+                    padding-left: .9rem;
+                    font-weight: 100;
+                    font-size: initial;
+                    text-decoration: none;"
+                    href="{% url 'find_post' %}">Find </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" style="
+                    padding-right: 3.9rem;
+                    padding-left: .9rem;
+                    font-weight: 100;
+                    font-size: initial;
+                    text-decoration: none;"
+                    href="{% url 'post' %}">Post<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="
+                    padding-right: 3.9rem;
+                    padding-left: .9rem;
+                    font-weight: 100;
+                    font-size: initial;
+                    text-decoration: none;"
+                    href="{% url 'dashboard' %}">DashBoard</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="{% url 'logout' %}">Logout</button>
+            </form>
+          </div>
+        </nav>
+
+<section id="post" style=" margin-top: 80px;">
   <header class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33" style="
     padding-right: 10px;
     padding-left: 10px;">
@@ -42,11 +82,15 @@
     <!-- Content -->
     <article class="box post">
 
-      <div class="container">
+      <div class="container" style="
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-right: 0px;
+      padding-left: 0px;">
         <div class="row">
           <div class="col col-md-2"></div>
 
-          <div class="col col-md-8">
+          <div class="col col-md-8" style="padding-top: 0px;">
             <form method="POST">
               {% csrf_token %}
               {% for field in form %}

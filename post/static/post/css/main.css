@@ -2625,6 +2625,7 @@ ul.social li a.fa-google-plus:hover {
 }
 .wrap-login101 {
   /* height: 90%; */
+  bottom: 70px;
   width: 680px;
   background: #fff;
   border-radius: 10px;

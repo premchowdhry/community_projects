@@ -16,34 +16,61 @@
   <title>Community Projects</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
   <link rel="icon" type="image/png" href="{% static 'login/images/icons/donation.png' %}" />
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
-  <link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
 </head>
 
 <body class="post is-preload">
   <div id="page-wrapper">
-    <nav id="nav">
-      <ul><a href="{% url 'find_post' %}">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" >
           <img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
-        </a>
-        <li class="">
-          <a href="{% url 'find_post' %}">Find</a>
-        </li>
-        <li class="">
-          <a href="{% url 'post' %}">Post</a>
-        </li>
-        <li class="current">
-          <a href="{% url 'dashboard' %}">DashBoard</a>
-        </li>
-        <li class="">
-          <a href="{% url 'logout' %}">Logout</a>
-        </li>
-      </ul>
-    </nav>
-    <section id="main">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item">
+                <a class="nav-link" style="
+                    padding-right: 3.9rem;
+                    padding-left: .9rem;
+                    font-weight: 100;
+                    font-size: initial;
+                    text-decoration: none;"
+                    href="{% url 'find_post' %}">Find </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" style="
+                    padding-right: 3.9rem;
+                    padding-left: .9rem;
+                    font-weight: 100;
+                    font-size: initial;
+                    text-decoration: none;"
+                    href="{% url 'post' %}">Post</a>
+              </li>
+              <li class="nav-item active ">
+                <a class="nav-link" style="
+                    padding-right: 3.9rem;
+                    padding-left: .9rem;
+                    font-weight: 100;
+                    font-size: initial;
+                    text-decoration: none;"
+                    href="{% url 'dashboard' %}">DashBoard <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="{% url 'logout' %}">Logout</button>
+            </form>
+          </div>
+        </nav>
+    <section id="main" style=" margin-top: 80px;">
       <div class="container">
 
         <div class="container-fluid gedf-wrapper">
@@ -209,16 +236,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <section id="footer">
-      <div class="container">
-        <!-- Copyright -->
-        <div id="copyright">
-          &copy; Untitled. All rights reserved.
-        </div>
-      </div>
 
-    </section>
   </div>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
