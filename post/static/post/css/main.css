@@ -304,7 +304,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 }
 
 body, input, textarea, select {
-  font-family: 'Source Sans Pro';
+  font-family: inherit;
   font-weight: 300;
   color: #5d5d5d;
   font-size: 14pt;

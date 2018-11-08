@@ -39,6 +39,7 @@
 							<option value="any">Any Type</option>
 							<option value="tutoring">Tutoring</option>
 							<option value="wildlife_conservation">Wildlife Conservation</option>
+							<option value="construction">Construction</option>
 							<option value="ocean_cleaning">Ocean Cleaning</option>
 							<option value="street_cleaning">Street Cleaning</option>
 						</select>
@@ -99,22 +100,27 @@
 								</section>
 							</div>
 							{% endfor %}
-
 						</div>
 					</div>
+
+					{% if posts|length == 0 %}
+					<h4 align="center">
+						No matching results.
+					</h4>
+					{% endif %}
 
 					{% for post in posts %}
 					<div class="modal fade product_view" id="modal-{{ post.id }}">
 						<div class="modal-dialog">
 							<div class="modal-content">
-								<div class="modal-header">
+								<div class="modal-header" style="flex-direction: row; display: flex; justify-content: space-between; align-items: center;">
 									<h3 class="modal-title">{{ post.title }}</h3>
 									<a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
 								</div>
 								<div class="modal-body">
 									<span style="display: flex; flex-direction: row;">
 										<div class="row">
-											<div class="col-md-6 product_content">
+											<div class="col-md-6 product_content" style="padding-left: 20px; width: 90%;">
 												<h4>Hosting company: <span>{{ post.company }}</span></h4>
 												<h4>Location of the job: <span>{{ post.location }}</span></h4>
 												<h4>Estimated hours: <span>{{ post.estimate_hours }}</span></h4>
@@ -122,17 +128,18 @@
 													<p>{{ post.description }}</p>
 												</div>
 												<div class="space-ten"></div>
+												<br />
 												<div class="btn-ground">
 													<a href="{% url 'signed_up_post' %}" class="button">Sign up</a>
 												</div>
 											</div>
 										</div>
 										{% if post.type == 'tutoring' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/work_type/school.jpg' %}" alt="" /></a>
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/olaves.png' %}" alt="" /></a>
 										{% elif post.type == 'wildlife_conservation' %}
 										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
 										{% elif post.type == 'construction' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/work_type/construction.jpg' %}" alt="" /></a>
+										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
 										{% elif post.type == 'ocean_cleaning' %}
 										<a href="#" class="image featured"><img src="{% static 'post/images/maps/brighton.png' %}" alt="" /></a>
 										{% elif post.type == 'street_cleaning' %}

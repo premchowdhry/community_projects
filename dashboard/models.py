@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Dashboard(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(default=timezone.now)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, default='')
     content = models.TextField(default='')
     likes = models.IntegerField(default=0)
 

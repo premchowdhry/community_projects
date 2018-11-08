@@ -9,6 +9,10 @@ def find(request):
     return render(request, 'post/find.html', {'posts': shown_posts(request)})
 
 
+def dashboard(request):
+    return render(request, 'post/dashboard.html')
+
+
 def post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -18,10 +22,6 @@ def post(request):
     else:
         form = PostForm()
     return render(request, 'post/post.html', {'form': form})
-
-
-def dashboard(request):
-    return render(request, 'post/dashboard.html')
 
 
 def profile(request):
@@ -43,11 +43,11 @@ def shown_posts(request):
     if 'estimate_hours' in request.GET:
         h = request.GET['estimate_hours']
         if h == '<1_hour':
-            posts = posts.filter(estimate_hours__range=(0, 1))
+            posts = posts.filter(estimate_hours__lte=1)
         elif h == '<3_hours':
-            posts = posts.filter(estimate_hours__range=(2, 3))
+            posts = posts.filter(estimate_hours__lte=3)
         elif h == '<5_hours':
-            posts = posts.filter(estimate_hours__range=(4, 5))
+            posts = posts.filter(estimate_hours__lte=5)
         elif h == '>5_hours':
             posts = posts.filter(estimate_hours__gte=6)
     if 'work_date' in request.GET:
@@ -65,6 +65,7 @@ def shown_posts(request):
             posts = posts.filter(
                 work_date__lte=timezone.now() + timezone.timedelta(days=180))
     return posts[:]
+
 
 def signed_up_post(request):
     return render(request, 'post/signed_up_post.html')
