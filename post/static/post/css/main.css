@@ -387,6 +387,38 @@ p, ul, ol, dl, table {
   width: 70em;
 }
 
+  @media screen and (max-width: 1680px) {
+
+    .container {
+      width: 70em;
+    }
+
+  }
+
+  @media screen and (max-width: 1280px) {
+
+    .container {
+      width: calc(100% - 60px);
+    }
+
+  }
+
+  @media screen and (max-width: 980px) {
+
+    .container {
+      width: calc(100% - 80px);
+    }
+
+  }
+
+  @media screen and (max-width: 736px) {
+
+    .container {
+      width: calc(100% - 40px);
+    }
+
+  }
+
 .progress {
   width: 150px;
   height: 150px;
@@ -566,29 +598,6 @@ p, ul, ol, dl, table {
   }
 }
 
-@media screen and (max-width: 1680px) {
-  .container {
-    width: 70em;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .container {
-    width: calc(100% - 60px);
-  }
-}
-
-@media screen and (max-width: 980px) {
-  .container {
-    width: calc(100% - 80px);
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .container {
-    width: calc(100% - 40px);
-  }
-}
 
 /* Row */
 .row {
@@ -1267,13 +1276,12 @@ p, ul, ol, dl, table {
   }
 
   .row {
-    margin-top: -30px;
-    margin-left: -30px;
-    padding: 30px 30px 0 30px;
-    position: -webkit-sticky;
-    /* Safari */
-    position: sticky;
-    top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  align-items: stretch;
+  margin-top: -30px;
+  margin-left: -30px;
   }
 
   .row>* {
@@ -2681,27 +2689,29 @@ body {
   font-family: 'helvetica';
 }
 
+
 #main {
   position: relative;
   background: #f7f7f7 url("images/bg02.png");
   padding: 4em 0 4em 0;
 }
 
-#main:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: url("images/bg01.png");
-  background-size: 100% 100%;
-  z-index: 0;
-  opacity: 0.1;
-}
+  #main:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url("images/bg01.png");
+    background-size: 100% 100%;
+    z-index: 0;
+    opacity: 0.1;
+  }
 
-#main .major h2 {
-  background: #f7f7f7 url("images/bg02.png");
-}
+  #main .major h2 {
+    background: #f7f7f7 url("images/bg02.png");
+  }
+
 
 /* Footer */
 #footer {
@@ -2821,6 +2831,7 @@ body {
     right: -12px;
   }
 
+  	
   /* Main */
   #main {
     padding: 30px 0;
