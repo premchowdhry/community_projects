@@ -387,6 +387,38 @@ p, ul, ol, dl, table {
   width: 70em;
 }
 
+  @media screen and (max-width: 1680px) {
+
+    .container {
+      width: 70em;
+    }
+
+  }
+
+  @media screen and (max-width: 1280px) {
+
+    .container {
+      width: calc(100% - 60px);
+    }
+
+  }
+
+  @media screen and (max-width: 980px) {
+
+    .container {
+      width: calc(100% - 80px);
+    }
+
+  }
+
+  @media screen and (max-width: 736px) {
+
+    .container {
+      width: calc(100% - 40px);
+    }
+
+  }
+
 .progress {
   width: 150px;
   height: 150px;
@@ -566,29 +598,6 @@ p, ul, ol, dl, table {
   }
 }
 
-@media screen and (max-width: 1680px) {
-  .container {
-    width: 70em;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .container {
-    width: calc(100% - 60px);
-  }
-}
-
-@media screen and (max-width: 980px) {
-  .container {
-    width: calc(100% - 80px);
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .container {
-    width: calc(100% - 40px);
-  }
-}
 
 /* Row */
 .row {
@@ -1267,13 +1276,12 @@ p, ul, ol, dl, table {
   }
 
   .row {
-    margin-top: -30px;
-    margin-left: -30px;
-    padding: 30px 30px 0 30px;
-    position: -webkit-sticky;
-    /* Safari */
-    position: sticky;
-    top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  align-items: stretch;
+  margin-top: -30px;
+  margin-left: -30px;
   }
 
   .row>* {
@@ -1940,16 +1948,13 @@ footer {
   background: #ffffff;
   border-bottom: solid 1px #ccc;
   padding: 2.75em 1.75em 2.75em 1.75em;
-  max-height: 540px;
-  min-height: 540px;
   position: relative;
 }
 .box.post{
   background: padding-box;
   border-bottom: solid 0px #ccc;
   padding: 2.75em 1.75em 2.75em 1.75em;
-  max-height: 540px;
-  min-height: 540px;
+  max-height: 95%;
   overflow: auto;
   position: relative;
 }
@@ -2557,6 +2562,8 @@ ul.social li a.fa-google-plus:hover {
 }
 
 #post{
+    height: 100%;
+    padding-bottom: 0px;
     background: #CCE8F4 url(/static/login/images/background/im.png);
     background-position: center bottom;
     background-size: auto 80%;
@@ -2606,6 +2613,18 @@ ul.social li a.fa-google-plus:hover {
 }
 
 .wrap-login100 {
+  height: 90%;
+  width: 680px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  padding: 2.5em 5em;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.wrap-login101 {
+  /* height: 90%; */
   width: 680px;
   background: #fff;
   border-radius: 10px;
@@ -2681,27 +2700,29 @@ body {
   font-family: 'helvetica';
 }
 
+
 #main {
   position: relative;
   background: #f7f7f7 url("images/bg02.png");
   padding: 4em 0 4em 0;
 }
 
-#main:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: url("images/bg01.png");
-  background-size: 100% 100%;
-  z-index: 0;
-  opacity: 0.1;
-}
+  #main:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url("images/bg01.png");
+    background-size: 100% 100%;
+    z-index: 0;
+    opacity: 0.1;
+  }
 
-#main .major h2 {
-  background: #f7f7f7 url("images/bg02.png");
-}
+  #main .major h2 {
+    background: #f7f7f7 url("images/bg02.png");
+  }
+
 
 /* Footer */
 #footer {
@@ -2820,6 +2841,7 @@ body {
   #intro .middle:after {
     right: -12px;
   }
+
 
   /* Main */
   #main {
@@ -3269,6 +3291,93 @@ body {
   /* Footer */
   #footer {
     padding: 10px 0 10px 0;
+  }
+
+
+  .calendar-day {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    height: 80px;
+  }
+  .calendar-table {
+    margin: 0 auto;
+    width: 700px;
+  }
+  .selected {
+    background-color: #eee;
+  }
+  .outside .date {
+    color: #ccc;
+  }
+  .timetitle {
+    white-space: nowrap;
+    text-align: right;
+  }
+  .event {
+    border-top: 1px solid #b2dba1;
+    border-bottom: 1px solid #b2dba1;
+    background-image: linear-gradient(to bottom, #dff0d8 0px, #c8e5bc 100%);
+    background-repeat: repeat-x;
+    color: #3c763d;
+    border-width: 1px;
+    font-size: .75em;
+    padding: 0 .75em;
+    line-height: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1px;
+  }
+  .event.begin {
+    border-left: 1px solid #b2dba1;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .event.end {
+    border-right: 1px solid #b2dba1;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .event.all-day {
+    border-top: 1px solid #9acfea;
+    border-bottom: 1px solid #9acfea;
+    background-image: linear-gradient(to bottom, #d9edf7 0px, #b9def0 100%);
+    background-repeat: repeat-x;
+    color: #31708f;
+    border-width: 1px;
+  }
+  .event.all-day.begin {
+    border-left: 1px solid #9acfea;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .event.all-day.end {
+    border-right: 1px solid #9acfea;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .event.clear {
+    background: none;
+    border: 1px solid transparent;
+  }
+  .table-tight > thead > tr > th,
+  .table-tight > tbody > tr > th,
+  .table-tight > tfoot > tr > th,
+  .table-tight > thead > tr > td,
+  .table-tight > tbody > tr > td,
+  .table-tight > tfoot > tr > td {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .table-tight-vert > thead > tr > th,
+  .table-tight-vert > tbody > tr > th,
+  .table-tight-vert > tfoot > tr > th,
+  .table-tight-vert > thead > tr > td,
+  .table-tight-vert > tbody > tr > td,
+  .table-tight-vert > tfoot > tr > td {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   /*The progress bar CSS*/

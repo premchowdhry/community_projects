@@ -1,16 +1,42 @@
-{% extends "post/base.html" %}
 {% load static %}
+<html>
 
-{% block nav %}
-{% with current_page="post" %}
-{{ block.super }}
-{% endwith %}
-{% endblock nav %}
-<!-- Main -->
-<!-- <section id="main"> -->
-{% block post %}
+<head>
+	<title>Community Projects</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" type="image/png" href="{% static 'login/images/icons/donation.png' %}" />
+	<link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
+	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+<body class="post is-preload" style="height = 100% ;">
+	<div id="page-wrapper">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
+				<li class="{% if current_page == 'find' %}current{% endif %}">
+					<a href="{% url 'find_post' %}">Find</a>
+				</li>
+				<li class="current">
+					<a href="{% url 'post' %}">Post</a>
+				</li>
+				<li class="{% if current_page == 'dashboard' %}current{% endif %}">
+					<a href="{% url 'dashboard' %}">DashBoard</a>
+				</li>
+				<li class="{% if current_page == 'logout' %}current{% endif %}">
+					<a href="{% url 'logout' %}">Logout</a>
+				</li>
+			</ul>
+		</nav>
+
 <section id="post">
-  <header class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+  <header class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33" style="
+    padding-right: 10px;
+    padding-left: 10px;">
   <div class="container">
 
     <!-- Content -->
@@ -50,7 +76,19 @@
   </div>
 </header>
 </section>
-{% endblock post %}
-{% block content %}
-{% endblock content %}
-<!-- </section> -->
+<!-- Scripts -->
+<!-- IMPORTANT: Include jquery before bootstrap -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="{% static 'post/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'post/js/jquery.min.js' %}"></script>
+<script src="{% static 'post/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'post/js/browser.min.js' %}"></script>
+<script src="{% static 'post/js/breakpoints.min.js' %}"></script>
+<script src="{% static 'post/js/util.js' %}"></script>
+<script src="{% static 'post/js/main.js' %}"></script>
+
+</body>
+
+</html>
