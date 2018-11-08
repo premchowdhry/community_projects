@@ -18,6 +18,11 @@ class Profile(models.Model):
     profile_image = models.ImageField(
         upload_to=get_image_path, blank=True, null=True)
 
+    @property
+    def get_prof_pic_url(self):
+        return '/static/login/images/icons/default-profile-picture.jpg'
+
+
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
     if created:
