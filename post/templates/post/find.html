@@ -124,7 +124,7 @@
 								</div>
 								<div class="modal-body">
 									<span style="display: flex; flex-direction: row;">
-										<div class="row">
+										<div class="row" style="    padding-left: 35px;">
 											<div class="col-md-6 product_content" style="padding-left: 20px; width: 90%;">
 												<h4><b>Hosting company:</b> <span>{{ post.company }}</span></h4>
 												<h4><b>Location of the job:</b> <span>{{ post.location }}</span></h4>
@@ -141,15 +141,15 @@
 											</div>
 										</div>
 										{% if post.type == 'tutoring' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/maps/olaves.png' %}" alt="" /></a>
+										<a href="" class="image featured"><img src="{% static 'post/images/maps/olaves.png' %}" alt="" /></a>
 										{% elif post.type == 'wildlife_conservation' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
+										<a href="" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
 										{% elif post.type == 'construction' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
+										<a href="" class="image featured"><img src="{% static 'post/images/maps/hydepark.png' %}" alt="" /></a>
 										{% elif post.type == 'ocean_cleaning' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/maps/brighton.png' %}" alt="" /></a>
+										<a href="" class="image featured"><img src="{% static 'post/images/maps/brighton.png' %}" alt="" /></a>
 										{% elif post.type == 'street_cleaning' %}
-										<a href="#" class="image featured"><img src="{% static 'post/images/maps/oxford_street.png' %}" alt="" /></a>
+										<a href="" class="image featured"><img src="{% static 'post/images/maps/oxford_street.png' %}" alt="" /></a>
 										{% endif %}
 									</span>
 								</div>
