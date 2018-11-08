@@ -6,7 +6,8 @@ from .forms import PostForm
 
 
 def find(request):
-    return render(request, 'post/find.html', {'posts': shown_posts(request)})
+    return render(request, 'post/find.html', {'posts': shown_posts(request),
+                                              'email': request.user.email.replace('@', '%40')})
 
 
 def dashboard(request):
