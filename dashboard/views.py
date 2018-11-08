@@ -29,7 +29,7 @@ def elapsed_time(date_posted):
         return str(time) + (' hour ago' if (time == 1) else ' hours ago')
     if time >= 60:
         time //= 60
-        return str(time) + ' minutes ago'
+        return str(time) + (' minute ago' if (time == 1) else ' minutes ago')
     return str(time) + ' seconds ago'
 
 
@@ -38,6 +38,5 @@ def save_post(author, form):
     new_post = form.save(commit=False)
     new_post.author = author
     new_post.date_posted = timezone.now()
-    new_post.title = form.cleaned_data['title']
     new_post.content = form.cleaned_data['content']
     new_post.save()
