@@ -157,7 +157,15 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="mr-2">
-                        <img class="rounded-circle" width="50" src="{{ dashboard.author.profile.get_prof_pic_url }}" alt="">
+                        {% if dashboard.author.user.get_username == shindexro %}
+                        <img class="rounded-circle" width="50" src="/static/login/images/icons/ian-profile-picture.png" alt="">
+                        {% elif dashboard.author.user.get_username == premsie %}
+                          <img class="rounded-circle" width="50" src="/static/login/images/icons/prem-profile-picture.jpg" alt="">
+                        {% elif dashboard.author.user.get_username == sophia %}
+                          <img class="rounded-circle" width="50" src="/static/login/images/icons/sophia-profile-picture.jpg" alt="">
+                        {% else %}
+                          <img class="rounded-circle" width="50" src="/static/login/images/icons/default-profile-picture.jpg" alt="">
+                        {% endif %}
                       </div>
                       <div class="ml-2">
                         <div class="h5 m-0">{{ dashboard.author.get_username }}</div>
@@ -206,7 +214,17 @@
             <div class="col-md-3">
               <div class="sidebar" style="position: fixed; width: 16%">
                 <section class="box">
-                  <a href="#" class="image featured"><img src="{{ user.profile.get_prof_pic_url }}" alt="" /></a>
+                  <a href="#" class="image featured">
+                    {% if user.get_username == 'premsie' %}
+                      <img src="/static/login/images/icons/prem-profile-picture.jpg" alt="">
+                    {% elif user.get_username == 'sophia' %}
+                      <img src="/static/login/images/icons/sophia-profile-picture.jpg" alt="">
+                    {% elif user.get_username == 'shindexro' %}
+                      <img src="/static/login/images/icons/ian-profile-picture.png" alt="">
+                    {% else %}
+                      <img src="/static/login/images/icons/default-profile-picture.jpg" alt="">
+                    {% endif %}
+                  </a>
                   <header>
                     <h3>{{ user.get_username }}</h3>
                   </header>
