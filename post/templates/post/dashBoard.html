@@ -105,7 +105,7 @@
               <div class="card gedf-card">
 
                 <section id="ban">
-                <div class="card-header" style="background: #343a40">
+                <div class="card-header" style="background: rgba(0,0,0,.03)">
                   <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true" style="text-decoration: none">Make
@@ -212,7 +212,46 @@
             </div>
 
             <div class="col-md-3">
-              <div class="sidebar" style="position: fixed; width: 16%">
+              <div class="card" style="position:fixed; width:17%">
+                <div class="card-body">
+                  <a href="#" class="image featured"><img src="{{ user.profile.get_prof_pic_url }}" alt="" /></a>
+                  <header>
+                    <h3 style="text-align: center;">{{ user.get_username }}</h3>
+                  </header>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                          <div class="progress blue" style="    position: relative;
+      left: 65px;
+  ">
+                            <span class="progress-left">
+                              <span class="progress-bar"></span>
+                            </span>
+                            <span class="progress-right">
+                              <span class="progress-bar"></span>
+                            </span>
+                            <div class="progress-value">90%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item" style=" border: 0px solid rgba(0,0,0,.125);">
+                    <div class="h7" style="text-align: center">{{ user.get_username }} you have done <h5>144 hours </h5>out of 160 ! 🎉🎉🎉 </div>
+
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+            <!-- <div class="col-md-3">
+              <div class="card" style="position: fixed; width: 16%">
                 <section class="box">
                   <a href="#" class="image featured">
                     {% if user.get_username == 'premsie' %}
@@ -226,14 +265,16 @@
                     {% endif %}
                   </a>
                   <header>
-                    <h3>{{ user.get_username }}</h3>
+                    <h3 style="text-align: center;">{{ user.get_username }}</h3>
                   </header>
 
 
                   <div class="container">
                     <div class="row">
                       <div class="col-md-3 col-sm-6">
-                        <div class="progress blue">
+                        <div class="progress blue" style="    position: relative;
+    left: 40px;
+">
                           <span class="progress-left">
                             <span class="progress-bar"></span>
                           </span>
@@ -245,9 +286,16 @@
                       </div>
                     </div>
                   </div>
+                  <div class="card-body">
+                    <div class="h7"><h6>{{ user.get_username }}</h6> you have done <h5>144 hours </h5> out of 160 !</div>
+                    <!-- <div class="h7"> Love to teach and open for community projects outside of the country! -->
+                    <!-- </div> -->
+                  <!-- </div>
                 </section>
               </div>
-            </div>
+
+
+            </div> --> -->
           </div>
         </div>
       </div>
