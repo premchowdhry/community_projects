@@ -6,6 +6,7 @@ class Dashboard(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50, default='')
+    image_link = models.CharField(max_length=100, default='')
     content = models.TextField(default='')
     likes = models.IntegerField(default=0)
 
