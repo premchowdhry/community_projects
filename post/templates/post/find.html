@@ -74,7 +74,7 @@
 						<div class="row">
 							{% for post in posts %}
 							<div class="col-4 col-6-medium col-12-small">
-								<section class="box">
+								<section class="boxes">
 									{% if post.type == 'tutoring' %}
 									<a href="#" class="image featured"><img src="{% static 'post/images/work_type/school.jpg' %}" alt="" /></a>
 									{% elif post.type == 'wildlife_conservation' %}
@@ -89,18 +89,18 @@
 									<header>
 										<h3>{{ post.title }}</h3>
 									</header>
-									<p>
+									<p style="min-height: 200px;">
 										{% if post.description|length > 210 %}
 										{{ post.description|slice:":210" }} ...
 										{% else %}
 										{{ post.description }}
 										{% endif %}
 									</p>
-									<footer>
+
 										<div class="space-ten"></div>
 										<div class="btn-ground text-center">
-											<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{ post.id }}"><i class="fa fa-search"></i>  Quick View</button>
-										</div>
+											<button type="buttonx" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{ post.id }}"><i class="fa fa-search"></i>  Quick View</button>
+
 									</footer>
 								</section>
 							</div>
@@ -120,7 +120,15 @@
 							<div class="modal-content">
 								<div class="modal-header" style="flex-direction: row; display: flex; justify-content: space-between; align-items: center;">
 									<h3 class="modal-title">{{ post.title }}</h3>
-									<a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+									<a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove" style="
+							 position: relative;
+						    top: -30px;
+						    display: inline-block;
+						    font-family: 'Glyphicons Halflings';
+						    font-style: normal;
+						    font-weight: 400;
+						    line-height: 1;
+						    -webkit-font-smoothing: antialiased;"></span></a>
 								</div>
 								<div class="modal-body">
 									<span style="display: flex; flex-direction: row;">

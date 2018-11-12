@@ -1945,6 +1945,16 @@ footer {
 }
 
 /* Box */
+.boxes {
+
+  background: #ffffff;
+  border-bottom: solid 1px #ccc;
+  padding: 2.75em 1.75em 2.75em 1.75em;
+  position: relative;
+  max-height: 680px;
+  min-height: 680px;
+  position: relative;
+}
 .box {
   background: #ffffff;
   border-bottom: solid 1px #ccc;
