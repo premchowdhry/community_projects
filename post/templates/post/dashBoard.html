@@ -16,7 +16,7 @@
   <title>Community Projects</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'post/css/main.css' %}" />
   <link rel="icon" type="image/png" href="{% static 'login/images/icons/donation.png' %}" />
 
   <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -27,49 +27,48 @@
 
 <body class="post is-preload">
   <div id="page-wrapper">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" >
-          <img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <img id="logo" src="{% static 'post/images/logo.png' %}" alt="CommunityProject Logo">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
 
-              <li class="nav-item">
-                <a class="nav-link" style="
+          <li class="nav-item">
+            <a class="nav-link" style="
                     padding-right: 3.9rem;
                     padding-left: .9rem;
                     font-weight: 100;
                     font-size: initial;
                     text-decoration: none;"
-                    href="{% url 'find_post' %}">Find </a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" style="
+              href="{% url 'find_post' %}">Find </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" style="
                     padding-right: 3.9rem;
                     padding-left: .9rem;
                     font-weight: 100;
                     font-size: initial;
                     text-decoration: none;"
-                    href="{% url 'post' %}">Post</a>
-              </li>
-              <li class="nav-item active ">
-                <a class="nav-link" style="
+              href="{% url 'post' %}">Post</a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" style="
                     padding-right: 3.9rem;
                     padding-left: .9rem;
                     font-weight: 100;
                     font-size: initial;
                     text-decoration: none;"
-                    href="{% url 'dashboard' %}">DashBoard <span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="{% url 'logout' %}">Logout</button>
-            </form>
-          </div>
-        </nav>
+              href="{% url 'dashboard' %}">DashBoard <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <a class="btn btn-outline-success my-2 my-sm-0" style="color: white; text-decoration: none;" href="{% url 'logout' %}">Logout</a>
+
+      </div>
+    </nav>
 
 
 
@@ -105,46 +104,46 @@
               <div class="card gedf-card">
 
                 <section id="ban">
-                <div class="card-header" style="background: rgba(0,0,0,.03)">
-                  <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true" style="text-decoration: none">Make
-                        a publication</a>
-                    </li>
+                  <div class="card-header" style="background: rgba(0,0,0,.03)">
+                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true" style="text-decoration: none">Make
+                          a publication</a>
+                      </li>
 
-                  </ul>
-                </div>
-                <form method="POST">
-                  {% csrf_token %}
-                  <div class="card-body">
-
-                    <div class="tab-content" id="myTabContent">
-                      <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                        <div class="form-group" style="opacity = 0.7">
-                          {{ form.as_p }}
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="btn-toolbar justify-content-between">
-                      <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">share</button>
-                      </div>
-                      <div class="btn-group">
-                        <button id="btnGroupDrop1" type="button" style="color: black" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fa fa-globe" style="color: black"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-                          <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
-                          <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
-                          <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
-                        </div>
-                      </div>
-                    </div>
-
+                    </ul>
                   </div>
-                </form>
-              </section>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="card-body">
+
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                          <div class="form-group" style="opacity = 0.7">
+                            {{ form.as_p }}
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                          <button type="submit" class="btn btn-primary">share</button>
+                        </div>
+                        <div class="btn-group">
+                          <button id="btnGroupDrop1" type="button" style="color: black" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-globe" style="color: black"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </form>
+                </section>
               </div>
               <!-- Post /////-->
               <br />
@@ -158,13 +157,13 @@
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="mr-2">
                         {% if dashboard.author.get_username == 'shindexro' %}
-                          <img class="rounded-circle" width="50" src="/static/login/images/icons/ian-profile-picture.png" alt="">
+                        <img class="rounded-circle" width="50" src="/static/login/images/icons/ian-profile-picture.png" alt="">
                         {% elif dashboard.author.get_username == 'premsie' %}
-                          <img class="rounded-circle" width="50" src="/static/login/images/icons/prem-profile-picture.jpg" alt="">
+                        <img class="rounded-circle" width="50" src="/static/login/images/icons/prem-profile-picture.jpg" alt="">
                         {% elif dashboard.author.get_username == 'sophia' %}
-                          <img class="rounded-circle" width="50" src="/static/login/images/icons/sophia-profile-picture.jpg" alt="">
+                        <img class="rounded-circle" width="50" src="/static/login/images/icons/sophia-profile-picture.jpg" alt="">
                         {% else %}
-                          <img class="rounded-circle" width="50" src="/static/login/images/icons/default-profile-picture.jpg" alt="">
+                        <img class="rounded-circle" width="50" src="/static/login/images/icons/default-profile-picture.jpg" alt="">
                         {% endif %}
                       </div>
                       <div class="ml-2">
@@ -189,6 +188,13 @@
                 </div>
                 <div class="card-body">
                   <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{ dashboard.elapsed_time }}</div>
+
+                  {% if dashboard.image_link %}
+                  <a href="#" class="image"><img src="{{ dashboard.image_link }}" alt="" /></a>
+                  <br />
+                  <br />
+                  {% endif %}
+
                   <p class="card-text">
                     {{ dashboard.content }}
                   </p>
@@ -214,7 +220,17 @@
             <div class="col-md-3">
               <div class="card" style="position:fixed; width:17%">
                 <div class="card-body">
-                  <a href="#" class="image featured"><img src="{{ user.profile.get_prof_pic_url }}" alt="" /></a>
+                  <a href="#" class="image featured">
+                    {% if user.get_username == 'shindexro' %}
+                    <img src="/static/login/images/icons/ian-profile-picture.png" alt="">
+                    {% elif user.get_username == 'premsie' %}
+                    <img src="/static/login/images/icons/prem-profile-picture.jpg" alt="">
+                    {% elif user.get_username == 'sophia' %}
+                    <img src="/static/login/images/icons/sophia-profile-picture.jpg" alt="">
+                    {% else %}
+                    <img src="/static/login/images/icons/default-profile-picture.jpg" alt="">
+                    {% endif %}
+                  </a>
                   <header>
                     <h3 style="text-align: center;">{{ user.get_username }}</h3>
                   </header>
@@ -289,8 +305,8 @@
                   <div class="card-body">
                     <div class="h7"><h6>{{ user.get_username }}</h6> you have done <h5>144 hours </h5> out of 160 !</div>
                     <!-- <div class="h7"> Love to teach and open for community projects outside of the country! -->
-                    <!-- </div> -->
-                  <!-- </div>
+            <!-- </div> -->
+            <!-- </div>
                 </section>
               </div>
 
