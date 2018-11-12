@@ -24,6 +24,9 @@ def shown_dashboards():
 
 def elapsed_time(date_posted):
     time = int((timezone.now() - date_posted).total_seconds())
+    if time >= 86400:
+        time //= 86400
+        return str(time) + (' day ago' if (time == 1) else ' days ago')
     if time >= 3600:
         time //= 3600
         return str(time) + (' hour ago' if (time == 1) else ' hours ago')
